@@ -1,0 +1,80 @@
+<b>Profiles</b> <br>
+
+{{#each model.profiles as |profile|}}
+
+Name: {{profile.name}}
+Alias: {{profile.alias}}
+Company: {{profile.company}}
+Status: {{profile.status}}
+channelPrivate: {{profile.channelPrivate}}
+Destination   :{{profile.destination}}
+Email         : {{profile.email}}
+Extension     : {{profile.extension}}
+Handle        : {{profile.handle}}
+Id            : {{profile.id}}
+Password      : {{profile.password}}
+<br>
+{{/each}}
+
+======================= <br>
+
+<b>Conversations</b> <br>
+
+{{#each model.conversations as |conversation|}}
+
+
+
+me: {{conversation.me}}
+other: {{conversation.other}}
+<br>
+{{/each}}
+
+
+========================= <br>
+
+ <b>Me each</b> <br>
+
+{{#each model.me as |me|}}
+
+name: {{me.name}}
+alias: {{me.alias}}
+<br>
+{{/each}}
+
+
+========================= <br>
+
+<b>Other each</b> <br>
+{{#each model.other as |other|}}
+
+name: {{other.name}}
+
+alias: {{other.alias}}
+
+{{/each}}
+<br>
+
+======================= <br>
+
+<b>Me correct</b> <br>
+
+alias: {{model.teste}}
+
+name: {{model.teste.name}}
+
+<br>
+
+
+======================= <br>
+
+<b>User by id</b> <br>
+
+alias: {{model.user.identifier}}
+
+name: {{model.user.name}}
+
+
+
+
+
+

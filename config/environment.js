@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'hello',
     environment: environment,
     baseURL: '/',
-    locationType: 'auto',
+    defaultLocationType: 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -16,15 +16,32 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    contentSecurityPolicy: {
+
+      'default-src': "'self' 'unsafe-inline' *",
+      'script-src': "'self' 'unsafe-inline' *",
+      'font-src': "'self' 'unsafe-inline' *",
+      'connect-src': "'self' 'unsafe-inline' * https://api.parse.com ",
+      'img-src': "'self' 'unsafe-inline' *",
+      'style-src': "'self' 'unsafe-inline' *",
+      'media-src': "'self' 'unsafe-inline' *"
+
+    },
+
+    cordova: {
+      rebuildOnChange: false,
+      emulate: false
     }
   };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
+    ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {
